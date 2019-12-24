@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ungtot/scaffold/register.dart';
+import '../utility/my_style.dart';
 
 class Authen extends StatefulWidget {
   @override
@@ -32,7 +34,12 @@ class _AuthenState extends State<Authen> {
     return OutlineButton(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
       child: Text('Sign Up'),
-      onPressed: () {},
+      onPressed: () {
+        print('You Click Sign Up');
+
+        MaterialPageRoute materialPageRoute = MaterialPageRoute(builder: (BuildContext buildContext){return Register();} );
+        Navigator.of(context).push(materialPageRoute);
+      },
     );
   }
 
@@ -81,7 +88,7 @@ class _AuthenState extends State<Authen> {
         fontSize: 24.0,
         fontWeight: FontWeight.bold,
         fontStyle: FontStyle.italic,
-        color: Colors.orange.shade900,
+        color: MyStyle().textColor,
         fontFamily: 'Lobster',
       ),
     );
